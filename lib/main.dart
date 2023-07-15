@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:logging/logging.dart';
 import 'firebase_options.dart';
 import 'app.dart';
+import 'service_locator.dart';
 
 void main() async {
   if(kDebugMode) {
@@ -23,6 +24,7 @@ void main() async {
   if(kDebugMode) {
     await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
   }
+  setupGetIt();
   runApp(const MyApp());
 }
 
